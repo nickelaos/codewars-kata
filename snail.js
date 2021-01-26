@@ -22,10 +22,8 @@ snail = function(array) {
             array[arr.length - 1] = [];
             break;
           default:
-            output.push(arr[arr.length - 1]);
-            temp.push(arr[0]);
-            arr[arr.length - 1] = null;
-            arr[0] = null;
+            output.push(arr.pop());
+            temp.push(arr.shift());
       }
       
     });
@@ -34,10 +32,6 @@ snail = function(array) {
     temp = [];
     
     array = array.filter(arr => arr.length);
-    array.forEach((arr, idx) => {
-      array[idx] = arr.filter(Number);
-    });
-
   }
   
   return output;
